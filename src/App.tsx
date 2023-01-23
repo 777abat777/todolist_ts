@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import TodoList, { TodoDataType } from './components/Todolist'
+
+let todoData1: Array<TodoDataType> = [
+   { id: 1, deal: 'first', completed: true },
+   { id: 2, deal: 'second', completed: false },
+   { id: 3, deal: 'last', completed: true },
+]
+let todoData2: Array<TodoDataType> = [
+   { id: 1, deal: 'deal', completed: true },
+   { id: 2, deal: 'second', completed: false },
+]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <div className="app">
+         <TodoList title='language' todoData={todoData1} />
+         <TodoList title='work' todoData={todoData2} />
+
+      </div >
+   );
 }
 
 export default App;
+
